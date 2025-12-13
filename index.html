@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Quality Improvement Project</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+    <div class="container">
+        <h1>Process Quality Improvement & Error Reduction Study</h1>
+        <p class="sub-title">Self-Initiated Non-IT Project | Dasi Santhosh</p>
+    </div>
+</header>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#objective">Objective</a>
+        <a href="#raw-data">Raw Data</a>
+        <a href="#error-analysis">Error Analysis</a>
+        <a href="#root-cause">Root Cause</a>
+        <a href="#process-improvement">Improvements</a>
+        <a href="#results-impact">Results</a>
+        <a href="#summary-learnings">Summary</a>
+    </div>
+</nav>
+
+<!-- ================= OBJECTIVE ================= -->
+<section id="objective" class="section">
+    <div class="container">
+        <h2>Project Objective</h2>
+        <p>
+            To identify frequent errors in operational records, analyze their root causes,
+            and recommend simple process improvements to reduce recurring mistakes and
+            improve overall data accuracy.
+        </p>
+    </div>
+</section>
+
+<!-- ================= RAW DATA ================= -->
+<section id="raw-data" class="section">
+    <div class="container">
+        <h2>Sample Operational Records</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Employee ID</th>
+                        <th>Process Type</th>
+                        <th>Date</th>
+                        <th>Error Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R001</td><td>EMP01</td><td>Customer Form</td><td>01-07-2025</td>
+                        <td class="missing">Missing Field</td><td>Phone number not entered</td>
+                    </tr>
+                    <tr>
+                        <td>R002</td><td>EMP02</td><td>Invoice Entry</td><td>01-07-2025</td>
+                        <td class="format">Format Issue</td><td>Date entered in wrong format</td>
+                    </tr>
+                    <tr>
+                        <td>R003</td><td>EMP03</td><td>Order Entry</td><td>02-07-2025</td>
+                        <td class="wrong">Wrong Entry</td><td>Incorrect product code</td>
+                    </tr>
+                    <tr>
+                        <td>R004</td><td>EMP01</td><td>Customer Form</td><td>02-07-2025</td>
+                        <td class="missing">Missing Field</td><td>Address incomplete</td>
+                    </tr>
+                    <tr>
+                        <td>R005</td><td>EMP04</td><td>Invoice Entry</td><td>03-07-2025</td>
+                        <td class="wrong">Wrong Entry</td><td>Amount duplicated</td>
+                    </tr>
+                    <tr>
+                        <td>R006</td><td>EMP02</td><td>Order Entry</td><td>03-07-2025</td>
+                        <td class="missing">Missing Field</td><td>Email ID missing</td>
+                    </tr>
+                    <tr>
+                        <td>R007</td><td>EMP03</td><td>Customer Form</td><td>04-07-2025</td>
+                        <td class="noerror">No Error</td><td>Data entered correctly</td>
+                    </tr>
+                    <tr>
+                        <td>R008</td><td>EMP04</td><td>Invoice Entry</td><td>04-07-2025</td>
+                        <td class="wrong">Wrong Entry</td><td>Wrong customer ID</td>
+                    </tr>
+                    <tr>
+                        <td>R009</td><td>EMP01</td><td>Order Entry</td><td>05-07-2025</td>
+                        <td class="format">Format Issue</td><td>Incorrect date format</td>
+                    </tr>
+                    <tr>
+                        <td>R010</td><td>EMP02</td><td>Customer Form</td><td>05-07-2025</td>
+                        <td class="missing">Missing Field</td><td>Email not provided</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ERROR ANALYSIS ================= -->
+<section id="error-analysis" class="section">
+    <div class="container">
+        <h2>Error Analysis</h2>
+        <p>Distribution of different error types identified in operational records.</p>
+        <div class="chart-wrapper">
+            <canvas id="errorChart"></canvas>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= ROOT CAUSE ================= -->
+<section id="root-cause" class="section">
+    <div class="container">
+        <h2>Root Cause Analysis</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Type</th>
+                    <th>Root Cause</th>
+                    <th>Observation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Missing Field</td>
+                    <td>No mandatory checks</td>
+                    <td>Users skip optional fields</td>
+                </tr>
+                <tr>
+                    <td>Wrong Entry</td>
+                    <td>Manual data entry</td>
+                    <td>No second-level validation</td>
+                </tr>
+                <tr>
+                    <td>Format Issue</td>
+                    <td>Lack of standard format</td>
+                    <td>Different formats used by users</td>
+                </tr>
+                <tr>
+                    <td>No Error</td>
+                    <td>Correct process followed</td>
+                    <td>High attention to detail</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ================= IMPROVEMENTS ================= -->
+<section id="process-improvement" class="section">
+    <div class="container">
+        <h2>Process Improvement Recommendations</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Type</th>
+                    <th>Issue</th>
+                    <th>Recommendation</th>
+                    <th>Expected Benefit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Missing Field</td>
+                    <td>Incomplete entries</td>
+                    <td>Mandatory field checklist</td>
+                    <td>Complete data capture</td>
+                </tr>
+                <tr>
+                    <td>Wrong Entry</td>
+                    <td>Manual errors</td>
+                    <td>Second-level verification</td>
+                    <td>Error reduction</td>
+                </tr>
+                <tr>
+                    <td>Format Issue</td>
+                    <td>Inconsistent formats</td>
+                    <td>Standard format guidelines</td>
+                    <td>Uniform data</td>
+                </tr>
+                <tr>
+                    <td>No Error</td>
+                    <td>Correct execution</td>
+                    <td>Maintain current process</td>
+                    <td>High accuracy</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section id="results-impact" class="section">
+    <div class="container">
+        <h2>Results & Impact</h2>
+        <canvas id="resultsChart"></canvas>
+        <button id="downloadBtn">Download Chart</button>
+    </div>
+</section>
+
+<!-- ================= SUMMARY ================= -->
+<section id="summary-learnings" class="section">
+    <div class="container">
+        <h2>Project Summary & Learnings</h2>
+
+        <p>
+            This project demonstrates how structured error analysis and small
+            process improvements can significantly enhance data quality and
+            operational efficiency.
+        </p>
+
+        <h3>Key Learnings</h3>
+        <ul>
+            <li>Importance of data accuracy</li>
+            <li>Root cause analysis techniques</li>
+            <li>Impact of preventive controls</li>
+            <li>Data visualization for decision making</li>
+        </ul>
+
+        <h3>Limitations</h3>
+        <ul>
+            <li>Sample-based dataset</li>
+            <li>No system-level automation</li>
+            <li>Results are simulated</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2025 Dasi Santhosh | Portfolio Project</p>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
